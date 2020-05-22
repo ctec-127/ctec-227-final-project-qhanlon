@@ -7,5 +7,9 @@
 </head>
 <body>
     <h1>This is just a page.</h1>
+    <!-- This is an HTML comment -->
+    <?php 
+    // This is a PHP comment
+    ?>
 </body>
 </html>
