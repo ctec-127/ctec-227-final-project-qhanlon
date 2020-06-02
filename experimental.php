@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experimental</title>
-</head>
-<body>
-    <h1>This is just a page.</h1>
-    <!-- This is an HTML comment -->
-    <?php 
-    // This is a PHP comment
-    ?>
-</body>
-</html>
+<?php  
+
+$page_title = "Placeholder";
+
+require 'inc/shared/header.php';
+
+require_once 'inc/shared/db_connect.inc.php';
+?>
+
+<form action="inc/registration/register.php" method="POST">
+<?php require 'inc/registration/form.php'; ?>
+</form>
+
+<?php
+
+require 'inc/shared/footer.php';
+
+?>
