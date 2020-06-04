@@ -1,5 +1,7 @@
 <?php 
 
+require_once 'inc/shared/db_connect.inc.php';
+
 // Create an empty array to put the errors in if there are any.
 $error_bucket = [];
 
@@ -58,21 +60,17 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     if (empty($_POST['password'])) {
         array_push($error_bucket,"<p>A password is required.</p>");
     } else {
-        if (isset($password) && isset($password2) && $password === $password2) {
-            $password = $db->real_escape_string(strip_tags($_POST['password']));
+        if (isset($_POST['password']) && isset($_POST['password2']) && $_POST['password'] === $_POST['password2']) {
+            $password = hash('sha512', $db->real_escape_string($_POST['password']));
         } else {
-            array_push($error_bucket,"<p>Please make sure your passwords match.</p>")
-            unset($password);
-            unset($password2);
+            if (isset($password) && isset($password2)) {
+                array_push($error_bucket,"<p>Please make sure your passwords match.</p>");
+            }
         }
     }
 
     if (empty($_POST['password2'])) {
         array_push($error_bucket,"<p>Please confirm your password.</p>");
-        unset($password);
-        unset($password2);
-    } else {
-        $password2 = $db->real_escape_string(strip_tags($_POST['password2']));
     }
 
     
@@ -91,21 +89,31 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         $result = $db->query($sql);
         if (!$result) {
             echo '<div class="alert alert-danger" role="alert">
-            I am sorry, but I could not save that record for you. ' .  
+            Something went wrong while trying to register your account. ' . "\n".  
             $db->error . '.</div>';
         } else {
             echo '<div class="alert alert-success" role="alert">
-            I saved that new record for you!
+            You\'ve been successfully registered! Feel free to log in and get shopping.
           </div>';
         //   Clear the fields after posting successfully so the user can proceed to add another entry.
             unset($first_name);
             unset($last_name);
             unset($email);
+            unset($address);
+            unset($city);
+            unset($state);
+            unset($zip);
+            unset($password);
+            unset($password2);
             
         }
     } else {
         // Tell the user what they did wrong.
-        display_error_bucket($error_bucket);
+        echo '<div class="alert alert-warning" role="alert">';
+        foreach ($error_bucket as $error) {
+            echo '<p>' . $error . '</p>';
+        }
+        echo '</div>';
     }
 }
 

@@ -1,4 +1,4 @@
-<form>
+<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" class="m-3 p-3">
     <label for="username">Username</label>
     <input type="text" id="username" name="username" value="<?php echo (isset($username) ? $username: '');?>">
     <br>
@@ -12,7 +12,7 @@
     <input type="text" id="email" name="email" value="<?php echo (isset($email) ? $email: '');?>">
     <br>
     <label for="address">Address</label>
-    <input type="text" id="address" name="address" value="<?php echo (isset($address) ? $address: '');?>">
+    <input type="text" id="address" name="address" value="<?php echo (isset($address) ? $address: '');?>" size="30">
     <br>
     <label for="city">City</label>
     <input type="text" id="city" name="city" value="<?php echo (isset($city) ? $city: '');?>">
@@ -21,13 +21,13 @@
     <input type="text" id="state" name="state" value="<?php echo (isset($state) ? $state: '');?>">
     <br>
     <label for="zip">Zip Code</label>
-    <input type="text" id="zip" name="zip" value="<?php echo (isset($zip) ? $zip: '');?>">
+    <input type="text" id="zip" name="zip" value="<?php echo (isset($zip) ? $zip: '');?>" size="10">
     <br>
     <label for="password">Password</label>
-    <input type="text" id="password" name="password" value="<?php echo (isset($password) ? $password: '');?>">
+    <input type="text" id="password" name="password">
     <br>
     <label for="password2">Confirm Password</label>
-    <input type="text" id="password2" name="password2" value="<?php echo (isset($password2) ? $password2: '');?>">
+    <input type="text" id="password2" name="password2">
     <br>
     <input type="submit" value="Register">
 </form>
