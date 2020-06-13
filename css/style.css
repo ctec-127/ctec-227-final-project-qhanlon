@@ -1,3 +1,20 @@
+body {
+    background-color: #1B1E21;
+    color: rgb(233, 233, 233);
+}
+
 input, textarea, select {
     display: block;
+}
+
+a {
+    color: rgb(155, 250, 255);
+}
+
+a:hover {
+    color: rgb(62, 218, 226);
+}
+
+.table-cat {
+    background: rgb(54, 40, 40);
 }

@@ -19,6 +19,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="catalogue.php">Browse Catalogue</a>
             <a class="dropdown-item" href="cart.php">View Cart</a>
+            <a class="dropdown-item" href="orders.php">View Orders</a>
         </div>
 
         </li>
