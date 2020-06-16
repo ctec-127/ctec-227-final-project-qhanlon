@@ -2,6 +2,10 @@
 
 require_once 'inc/shared/db_connect.inc.php';
 
+require 'inc/shared/functions.inc.php';
+
+require 'inc/shared/filters.inc.php';
+
 // Create an empty array to put the errors in if there are any.
 $error_bucket = [];
 
@@ -77,5 +81,18 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         echo '</div>';
     }
 }
+
+require 'inc/inventory/form.inc.php'; 
+
+// Query DB based on parameters specified
+$sql = "SELECT * FROM product" . $filter . " ORDER BY " . $order;
+
+// echo "<h1>" . $sql . "</h1>";
+
+$result = $db->query($sql);
+
+show_products($result, 1)
+
+
 
 ?>

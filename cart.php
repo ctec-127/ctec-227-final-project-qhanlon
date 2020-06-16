@@ -5,6 +5,8 @@ $page_title = "Cart";
 require 'inc/shared/header.inc.php';
 require 'inc/shared/nav.inc.php';
 
+require 'inc/cart/cart.inc.php';
+
 require 'inc/shared/footer.inc.php';
 
 ?>

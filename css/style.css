@@ -1,6 +1,7 @@
 body {
     background-color: #1B1E21;
     color: rgb(233, 233, 233);
+    position: relative;
 }
 
 input, textarea, select {
@@ -17,4 +18,20 @@ a:hover {
 
 .table-cat {
     background: rgb(54, 40, 40);
+}
+
+.test {
+    width: 130px;
+}
+
+.dropdown-menu.show {
+    background: #606060;
+}
+
+.dropdown-item {
+    color: #dadada;
+}
+
+.sticky {
+    position: sticky;
 }

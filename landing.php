@@ -7,7 +7,9 @@ require 'inc/shared/nav.inc.php';
 
 echo "<div><h1 class=\"text-center\">Welcome to the site, " . (isset($_SESSION['first_name']) ? $_SESSION['first_name'] : 'friend') . "!</h1></div>";
 
-echo "<h1>Your cart is cart #" . $_SESSION['cart'] . "</h1>";
+
+
+echo isset($_SESSION['cart']) ? "<h1>Your cart is cart #" . $_SESSION['cart'] . "</h1>" : '';
 
 require 'inc/shared/footer.inc.php';
 

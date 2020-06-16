@@ -29,7 +29,7 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Inventory
         </a>
-
+        
         <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
             <a class="dropdown-item" href="inventory.php">List Items for Sale</a>
         </div>
@@ -39,7 +39,9 @@
 
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="login.php">Log In</a>
+            <?php 
+            echo (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == 1) ?  '<a class="nav-link" href="logout.php">Log Out</a>' : '<a class="nav-link" href="login.php">Log In</a>';
+            ?>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="register.php">Register</a>
