@@ -18,23 +18,26 @@
 
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="catalogue.php">Browse Catalogue</a>
-            <a class="dropdown-item" href="cart.php">View Cart</a>
-            <a class="dropdown-item" href="orders.php">View Orders</a>
+            <?php echo isset($_SESSION['loggedin']) ? 
+                '<a class="dropdown-item" href="cart.php">View Cart</a>
+                <a class="dropdown-item" href="orders.php">View Orders</a>' : '';
+            ?>
         </div>
 
         </li>
 
 
-        <li class="nav-item dropdown">
+        <?php echo (isset($_SESSION['loggedin']) && $_SESSION['clearance'] > 0) ? '<li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Inventory
         </a>
         
         <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
             <a class="dropdown-item" href="inventory.php">List Items for Sale</a>
+            <a class="dropdown-item" href="inv-display.php">View Inventory</a>
         </div>
         
-        </li>
+        </li>' : '';?>
     </ul>
 
     <ul class="navbar-nav">

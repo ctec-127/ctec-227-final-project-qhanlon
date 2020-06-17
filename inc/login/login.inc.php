@@ -33,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['first_name'] = $row['first_name'];
         $_SESSION['email'] = $row['email'];
         $_SESSION['id'] = $row['user_id'];
+        $_SESSION['clearance'] = $row['clearance'];
         $id = $_SESSION['id'];
         $cart = "SELECT * FROM cart WHERE user_id='$id' AND status='0'";
 

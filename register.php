@@ -1,6 +1,6 @@
 <?php  
 session_start();
-$page_title = "Placeholder";
+$page_title = "Register";
 
 require 'inc/shared/header.inc.php';
 require 'inc/shared/nav.inc.php';

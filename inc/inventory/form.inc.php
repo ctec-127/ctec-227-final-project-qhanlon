@@ -13,8 +13,8 @@
     <br>
     <label for="category">Product Category</label>
     <?php 
-        if (isset($category)) { 
-            $cat = $category;
+        if (isset($category_id)) { 
+            $cat = $category_id;
         } else {
             $cat = NULL;
         } 
@@ -29,5 +29,6 @@
         <option value="5" <?php if ($cat == "5") {echo "selected";}?>>Books</option>
     </select>
     <br>
-    <input type="submit" value="List Item">
+    <input type="hidden" name="editing" value="<?php echo (isset($_POST['edit']) || !empty($editing)) ? $editing : '' ?>">
+    <input type="submit" value="<?php echo (isset($_POST['edit']) || !empty($editing)) ? "Update Listing" : "List Item" ?>">
 </form>

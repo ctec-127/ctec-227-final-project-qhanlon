@@ -64,7 +64,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $sql = " SELECT cost, description, name, quantity, product_id
     FROM content, product
-    WHERE  content.item_id = product.product_id";
+    WHERE  content.item_id = product.product_id
+    AND content.cart_id = $cart_id";
 
     $joined = $db->query($sql);
 
@@ -79,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <input type="number" name="quantity" value="' . $row['quantity'] . '">
         <input type="hidden" name="item" value="' . $productNum . '">
         <input type="hidden" name="update" value="TRUE">
-        <input type="submit" value="Update Cart">
+        <input type="submit" value="Update Quantity">
         </form>
         <form action="delete-stuff.php" method="POST">
         <input type="hidden" name="cart" value="' . $cart_id . '">
@@ -91,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         echo '<tr>';
         echo "<td><strong>" . $row['name'] . "</strong></td>";
         echo "<td>" . $row['description'] . "</td>";
-        echo "<td>" . number_format($row['cost'], 2, ".", "") . "</td>";
+        echo "<td>$" . number_format($row['cost'], 2, ".", "") . "</td>";
         echo "<td>" . $addToCart . "</td>";
         echo '</tr>';
     }

@@ -9,7 +9,7 @@ require 'inc/shared/filters.inc.php';
 // Query DB based on parameters specified
 $sql = "SELECT * FROM product" . $filter . " ORDER BY " . $order;
 
-echo "<h1>" . $sql . "</h1>";
+// echo "<h1>" . $sql . "</h1>";
 
 $result = $db->query($sql);
 

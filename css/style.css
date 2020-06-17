@@ -20,8 +20,20 @@ a:hover {
     background: rgb(54, 40, 40);
 }
 
-.test {
+.product {
+    width: 140px;
+}
+
+.w80 {
+    width: 80px;
+}
+
+.w130 {
     width: 130px;
+}
+
+.w170 {
+    width: 170px;
 }
 
 .dropdown-menu.show {
