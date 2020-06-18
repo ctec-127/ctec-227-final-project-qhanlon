@@ -9,7 +9,7 @@ echo "<div><h1 class=\"text-center\">Welcome to the site, " . (isset($_SESSION['
 
 
 
-// echo isset($_SESSION['cart']) ? "<h1>Your cart is cart #" . $_SESSION['cart'] . "</h1>" : '';
+echo isset($_SESSION['cart']) ? "<h1>Your cart is cart #" . $_SESSION['cart'] . "</h1>" : '';
 
 require 'inc/shared/footer.inc.php';
 

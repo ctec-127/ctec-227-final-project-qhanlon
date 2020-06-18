@@ -18,7 +18,7 @@ echo '<ul class="sorting mb-4 mt-4">
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sqlD = "DELETE FROM product WHERE product_id={$_POST['delete']} LIMIT 1";
-    echo "<h1>" . $sqlD . "</h1>";
+    // echo "<h1>" . $sqlD . "</h1>";
     $resolve = $db->query($sqlD);
 
     if($db->affected_rows == 1){
