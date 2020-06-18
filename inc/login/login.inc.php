@@ -50,12 +50,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Build SQL to find user's current cart
             $sql = "INSERT INTO cart (user_id, status) VALUES ('$id', '0')";
             $result2 = $db->query($sql);
-            // Make it into an associative array to receive the Key Value
+            // Re-do SQL to obtain new entry then grab it.
+            $sql = "SELECT * FROM cart WHERE user_id='$id' AND status='0'";
+            $result2 = $db->query($sql);
             $row = mysqli_fetch_row($result2);
             $_SESSION['cart'] = $row[0];
+            echo $row[0];
         }
 
-        header ('location: landing.php');
+        // header ('location: landing.php');
     } else {
         echo '<div class="alert alert-warning"><p>Something went wrong. Please try again.</p></div>';
     }
