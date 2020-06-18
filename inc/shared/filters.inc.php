@@ -1,8 +1,8 @@
 <?php 
 
 // Determine the filters or sorting.
-if (isset($_GET['filter']) && is_numeric($_GET['filter'])) {
-    $filter = " WHERE category=" . $_GET['filter'];
+if (isset($_GET['category']) && is_numeric($_GET['category'])) {
+    $filter = " WHERE category_id = " . $_GET['category'];
 } else {
     $filter = '';
 }
@@ -20,5 +20,6 @@ if (isset($_GET['sorting'])) {
 if (isset($_GET['clearfilter'])){
     $filter = '';
 }
+
 
 ?>

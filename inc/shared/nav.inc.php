@@ -41,14 +41,15 @@
     </ul>
 
     <ul class="navbar-nav">
-        <li class="nav-item">
+        
             <?php 
-            echo (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == 1) ?  '<a class="nav-link" href="logout.php">Log Out</a>' : '<a class="nav-link" href="login.php">Log In</a>';
+            echo (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == 1) ? 
+            '<li class="nav-item"><a class="nav-link" href="logout.php">Log Out</a></li>' : 
+            '<li class="nav-item"><a class="nav-link" href="login.php">Log In</a></li>
+            <li class="nav-item"><a class="nav-link" href="register.php">Register</a></li>';
             ?>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="register.php">Register</a>
-        </li>
+        
+        
     </ul>
   </div>
 </nav>

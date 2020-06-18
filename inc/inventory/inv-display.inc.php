@@ -6,6 +6,16 @@ require 'inc/shared/functions.inc.php';
 
 require 'inc/shared/filters.inc.php';
 
+echo '<ul class="sorting mb-4 mt-4">
+    <li><a href="inv-display.php">View All</a></li>
+    <li><a href="inv-display.php?category=0">General Goods</a></li>
+    <li><a href="inv-display.php?category=1">Electronics</a></li>
+    <li><a href="inv-display.php?category=2">Camping Gear</a></li>
+    <li><a href="inv-display.php?category=3">Board Games</a></li>
+    <li><a href="inv-display.php?category=4">Sports</a></li>
+    <li><a href="inv-display.php?category=5">Books</a></li>
+</ul>';
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sqlD = "DELETE FROM product WHERE product_id={$_POST['delete']} LIMIT 1";
     echo "<h1>" . $sqlD . "</h1>";

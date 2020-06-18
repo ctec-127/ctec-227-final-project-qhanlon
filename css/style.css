@@ -2,10 +2,15 @@ body {
     background-color: #1B1E21;
     color: rgb(233, 233, 233);
     position: relative;
+    min-width: 545px;
 }
 
 input, textarea, select {
     display: block;
+}
+
+table {
+    min-width: 545px;
 }
 
 a {
@@ -16,8 +21,41 @@ a:hover {
     color: rgb(62, 218, 226);
 }
 
+#finalize {
+    font-weight: bold;
+    color: #ADF3FF;
+    margin-right: 20px;
+    float: right;
+    background: #4A4A4A;
+    border-radius: 10px;
+}
+
+.sorting {
+    list-style: none;
+    line-height: 45px;
+    text-align: center;
+    padding: 0;
+    min-width: 545px;
+}
+
+.sorting>li {
+    display: inline-block;
+}
+
+.sorting>li>a {
+    padding: 0 15px;
+    margin: 10px;
+    background: #22282e;
+    display: inline-block;
+    width: 135px;
+}
+
+.sorting>li>a:hover {
+    background: #22383e;
+}
+
 .table-cat {
-    background: rgb(54, 40, 40);
+    background: #22383e;
 }
 
 .product {
@@ -28,12 +66,24 @@ a:hover {
     width: 80px;
 }
 
+.w110 {
+    width: 110px;
+}
+
 .w130 {
     width: 130px;
 }
 
 .w170 {
     width: 170px;
+}
+
+.w210 {
+    width: 210px;
+}
+
+.w300 {
+    width: 300px;
 }
 
 .dropdown-menu.show {

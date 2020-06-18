@@ -17,7 +17,7 @@ function show_products($result, $inventory){
     echo '<th><a href="?sorting=cost">Cost</a></th>';
     echo !empty($inventory) ? '<th><a href="?sorting=stock">Stock</a></th>' : '';
     if (isset($_SESSION['loggedin'])) {
-        if ($_SESSION['clearance'] > 0) {
+        if ($_SESSION['clearance'] > 0 && !empty($inventory)) {
             if ($_SESSION['clearance'] == 2) {
                 echo '<th class="w170">Options</th></tr></thead>';
             } else {

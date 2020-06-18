@@ -74,5 +74,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <br><br>
     <input type="submit" value="Login">
 </form>
-
-<script src="js/script.js"></script>
