@@ -85,7 +85,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
             } else {
                 if (!empty($editing)) {
                     echo '<div class="alert alert-success" role="alert">
-                    You\'ve successfully updated your product listing!.
+                    You\'ve successfully updated your product listing!
                     </div>';
                 } else {
                     echo '<div class="alert alert-success" role="alert">

@@ -24,10 +24,10 @@
     <input type="text" id="zip" name="zip" value="<?php echo (isset($zip) ? $zip: '');?>" size="10">
     <br>
     <label for="password">Password</label>
-    <input type="text" id="password" name="password">
+    <input type="password" id="password" name="password">
     <br>
     <label for="password2">Confirm Password</label>
-    <input type="text" id="password2" name="password2">
+    <input type="password" id="password2" name="password2">
     <br>
     <input type="submit" value="Register">
 </form>

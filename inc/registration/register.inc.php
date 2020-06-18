@@ -96,6 +96,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
             You\'ve been successfully registered! Feel free to log in and get shopping.
           </div>';
         //   Clear the fields after posting successfully so the user can proceed to add another entry.
+            unset($username);
             unset($first_name);
             unset($last_name);
             unset($email);
